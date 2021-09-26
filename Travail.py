@@ -18,6 +18,8 @@ print (b)
 print (c)
 print (d)
 
+print("Ca marche du tonnerre")
+
 ### Salles
 aa = Lieu (codeLieu=1, lieuLoc="Bahamas", prix="1300€")
 ab = Lieu (codeLieu=2, lieuLoc="Canaries", prix="1150€")
