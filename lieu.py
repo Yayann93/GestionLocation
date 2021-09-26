@@ -8,22 +8,22 @@ class Lieu:
         :param prix: prix à la journée
         
         """
-        self.setcodeLieu (codeLieu)
-        self.setlieuLoc (lieuLoc)
-        self.setprix (prix)
+        self.setCodeLieu (codeLieu)
+        self.setLieuLoc (lieuLoc)
+        self.setPrix (prix)
     def __str__(self) -> str:
         return "code du lieu de location : "+str(self.getcodeLieu())+"; lieu de la location : "+self.getlieuLoc()+"; prix à la journée : "+self.getprix()
     #Setter
-    def setcodeLieu (self, codelieu : int) -> None:
+    def setCodeLieu (self, codelieu : int) -> None:
         self.__codeLieu = codelieu
-    def setlieuLoc (self, lieuLoc : str) -> None:
+    def setLieuLoc (self, lieuLoc : str) -> None:
         self.__lieuLoc = lieuLoc
-    def setprix (self, prix : str) -> None:
+    def setPrix (self, prix : str) -> None:
         self.__prix = prix
     #Getter
-    def getcodeLieu (self) -> int:
+    def getCodeLieu (self) -> int:
         return self.__codeLieu
-    def getlieuLoc (self) -> str:
+    def getLieuLoc (self) -> str:
         return self.__lieuLoc
-    def getprix (self) -> str:
+    def getPrix (self) -> str:
         return self.__prix
