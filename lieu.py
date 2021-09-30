@@ -12,7 +12,7 @@ class Lieu:
         self.setLieuLoc (lieuLoc)
         self.setPrix (prix)
     def __str__(self) -> str:
-        return "code du lieu de location : "+str(self.getcodeLieu())+"; lieu de la location : "+self.getlieuLoc()+"; prix à la journée : "+self.getprix()
+        return "code du lieu de location : "+str(self.getCodeLieu())+"; lieu de la location : "+self.getLieuLoc()+"; prix à la journée : "+self.getPrix()
     #Setter
     def setCodeLieu (self, codelieu : int) -> None:
         self.__codeLieu = codelieu
