@@ -1,5 +1,5 @@
 import unittest
-from lieu import Lieu
+from classes.lieu import Lieu
 
 class TestLieu(unittest.TestCase):
 
