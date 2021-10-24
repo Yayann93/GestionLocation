@@ -1,7 +1,7 @@
-from location import Location, Client
-from calendrier import Jour, Mois, Annee
-from organisme import Organisme
-from lieu import Lieu
+from classes.location import Location, Client
+from classes.calendrier import Jour, Mois, Annee
+from classes.organisme import Organisme
+from classes.lieu import Lieu
 """
 
 Import des différentes classes du projet
