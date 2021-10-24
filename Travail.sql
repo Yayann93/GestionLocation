@@ -10,10 +10,10 @@ DROP TABLE salle;
 DROP TABLE organisme;
 
 CREATE TABLE organisme
-(codeOrganisme INTEGER NOT NULL ,
+(codeOrganisme INTEGER NOT NULL,
 nomOrganisme CHAR(25),
 codeNumAgrement INTEGER NOT NULL,
-CONSTRAINT pk_nomOrganisme PRIMARY KEY (codeOrganisme));
+CONSTRAINT pk_codeOrganisme PRIMARY KEY (codeOrganisme));
 
 CREATE TABLE salle
 (codeSalle INTEGER NOT NULL,
