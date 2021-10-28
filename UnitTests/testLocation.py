@@ -1,5 +1,5 @@
 import unittest
-from location import Salle, Louer
+from location import Louer
 
 class TestLocation(unittest.TestCase):
 
