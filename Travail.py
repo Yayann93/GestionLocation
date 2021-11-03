@@ -1,38 +1,39 @@
-from classes.location import Location, Client
-from classes.calendrier import Jour, Mois, Annee
-from classes.organisme import Organisme
-from classes.lieu import Lieu
+from classes.location import Louer, Salle
+from classes.organisme import Organisme, Client
 """
 
 Import des différentes classes du projet
 
 """
 ### Organismes
-a = Organisme (codeOrga=1, nomOrga="Auchan", numOrga=1)
-b = Organisme (codeOrga=2, nomOrga="Casino", numOrga=2)
-c = Organisme (codeOrga=3, nomOrga="Leclerc", numOrga=3)
-d = Organisme (codeOrga=4, nomOrga="Carrefour", numOrga=4)
+oa = Organisme (codeOrga=1, nomOrga="Auchan", numOrga=1)
+ob = Organisme (codeOrga=2, nomOrga="Casino", numOrga=2)
+oc = Organisme (codeOrga=3, nomOrga="Leclerc", numOrga=3)
+od = Organisme (codeOrga=4, nomOrga="Carrefour", numOrga=4)
 
-print (a)
-print (b)
-print (c)
-print (d)
+print (oa)
+print (ob)
+print (oc)
+print (od)
 
-print("Ca marche du tonnerre")
+### Client
+ca = Client (codeClient=1, nomClient="M. BERNARD", adresseClient="28 rue des églantines", dateDeNaissance="28/03/1984", organisme="Auchan")
 
-### Salles
-aa = Lieu (codeLieu=1, lieuLoc="Bahamas", prix="1300€")
-ab = Lieu (codeLieu=2, lieuLoc="Canaries", prix="1150€")
-ac = Lieu (codeLieu=3, lieuLoc="Antilles", prix="1200€")
-ad = Lieu (codeLieu=4, lieuLoc="Ibiza", prix="600€")
+print (ca)
 
-print (aa)
-print (ab)
-print (ac)
-print (ad)
+### Salle
+sa = Salle (codeSalle=1, nomSalle="Bahamas", prixSalle="1300€")
+sb = Salle (codeSalle=2, nomSalle="Canaries", prixSalle="1150€")
+sc = Salle (codeSalle=3, nomSalle="Antilles", prixSalle="1200€")
+sd = Salle (codeSalle=4, nomSalle="Ibiza", prixSalle="600€")
+
+print (sa)
+print (sb)
+print (sc)
+print (sd)
 
 
-from datetime import date
+### Location
+la = Louer (dateDebut=1639569600, dateFin=1639591200, salle="Bahamas",organisme="Auchan",client="M. BERNARD")
 
-today = date.today()
-print("Date d'aujourd'hui:", today)
+print (la)

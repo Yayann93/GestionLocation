@@ -14,6 +14,9 @@ class Organisme:
         self.setnomOrganisme (nomOrganisme)
         self.setnumAgrement (numAgrement)
 
+    def __str__(self) -> str:
+        return "Code Organisme :"+int(self.getcodeOrganisme())+"; Nom Organisme :"+str(self.getnomOrganisme())+"; Numéro d'Agrément :"+int(self.getnumAgrement())
+
     
     #Setter
 
@@ -50,11 +53,15 @@ class Client:
         self.setdateDeNaissance (dateDeNaissance)
         self.setorganisme (organisme)
 
+    def __str__(self) -> str:
+        return "Code Client :"+int(self.getcodeClient())+"; Nom Client :"+str(self.getnomClient())+"; Adresse du Client :"+str(self.getadresseClient())+"; Date de naissance :"+int(self.getdateDeNaissance())+"; Organisme :"+str(self.getorganisme())
+
+
     #Setter
     def setcodeClient (self, codeClient : int) -> None:
         self.__codeClient = codeClient
 
-    def setnomClient (self, nomClient : int) -> None:
+    def setnomClient (self, nomClient : str) -> None:
         self.__nomClient = nomClient
 
     def setadresseClient (self, adresseClient : str) -> None:
