@@ -1,3 +1,5 @@
+import sqlite3
+
 class Organisme:
 
     def __init__(self, codeOrganisme, nomOrganisme, numAgrement) -> None:
@@ -39,6 +41,13 @@ class Organisme:
 
     def getnumAgrement (self) -> int:
         return self.__numAgrement
+    
+    def save(self, nomBase : str) -> int:
+        con = sqlite3.connection(nomBase) # On cree la connexion
+        cur = con.cursor() # On recupere le curseur de la base
+        cur.execute('''INSERT INTO organisme(nomOrganisme, codeNumAgrement) VALUES ('''+self.getnomOrganisme()+''', '''+self.getnumAgrement()+''')''') # On cree les donnees
+        con.commit() # On sauvegarde les donnees que l'on vient de creer
+        con.close() #On oublie pas de fermer la connexion pour eviter d'avoir des connexion zombies
             
 class Client:
 
