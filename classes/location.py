@@ -64,7 +64,7 @@ class Salle:
         self.setprixSalle (prixSalle)
     
     def __str__(self) -> str:
-        return "Code Salle :"+int(self.getcodeSalle())+"; Nom Salle :"+str(self.getnomSalle())+"; Prix de la Salle :"+int(self.getprixSalle())
+        return "Code Salle :"+str(self.getcodeSalle())+"; Nom Salle :"+str(self.getnomSalle())+"; Prix de la Salle :"+str(self.getprixSalle())
 
     #Mutateur, Setter     
     

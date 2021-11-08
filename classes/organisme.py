@@ -17,7 +17,7 @@ class Organisme:
         self.setnumAgrement (numAgrement)
 
     def __str__(self) -> str:
-        return "Code Organisme :"+int(self.getcodeOrganisme())+"; Nom Organisme :"+str(self.getnomOrganisme())+"; Numéro d'Agrément :"+int(self.getnumAgrement())
+        return "Code Organisme :"+str(self.getcodeOrganisme())+"; Nom Organisme :"+str(self.getnomOrganisme())+"; Numéro d'Agrément :"+str(self.getnumAgrement())
 
     
     #Setter
@@ -42,10 +42,10 @@ class Organisme:
     def getnumAgrement (self) -> int:
         return self.__numAgrement
     
-    def save(self, nomBase : str) -> int:
-        con = sqlite3.connection(nomBase) # On cree la connexion
+    def save(self, nomBase : str) -> None:
+        con = sqlite3.connect(nomBase) # On cree la connexion
         cur = con.cursor() # On recupere le curseur de la base
-        cur.execute('''INSERT INTO organisme(nomOrganisme, codeNumAgrement) VALUES ('''+self.getnomOrganisme()+''', '''+self.getnumAgrement()+''')''') # On cree les donnees
+        cur.execute('''INSERT INTO organisme(nomOrganisme, codeNumAgrement) VALUES ("'''+self.getnomOrganisme()+'''", '''+str(self.getnumAgrement())+''')''') # On cree les donnees
         con.commit() # On sauvegarde les donnees que l'on vient de creer
         con.close() #On oublie pas de fermer la connexion pour eviter d'avoir des connexion zombies
             
@@ -63,7 +63,7 @@ class Client:
         self.setorganisme (organisme)
 
     def __str__(self) -> str:
-        return "Code Client :"+int(self.getcodeClient())+"; Nom Client :"+str(self.getnomClient())+"; Adresse du Client :"+str(self.getadresseClient())+"; Date de naissance :"+int(self.getdateDeNaissance())+"; Organisme :"+str(self.getorganisme())
+        return "Code Client :"+str(self.getcodeClient())+"; Nom Client :"+str(self.getnomClient())+"; Adresse du Client :"+str(self.getadresseClient())+"; Date de naissance :"+str(self.getdateDeNaissance())+"; Organisme :"+str(self.getorganisme())
 
 
     #Setter
