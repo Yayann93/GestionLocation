@@ -1,38 +1,52 @@
-from location import Location, Client
-from calendrier import Jour, Mois, Annee
-from organisme import Organisme
-from lieu import Lieu
+from classes.location import Louer, Salle
+from classes.organisme import Organisme, Client
+import sqlite3
+con = sqlite3.connect('Travail.db')
+
+
+cur = con.cursor()
+cur.execute('''INSERT INTO organisme (nomOrganisme, codeNumAgrement) VALUES("Auchan",3)''')
+cur.execute('''INSERT INTO client (nomClient, adresseClient, dateDeNaissance, codeOrganisme) VALUES ("M. BERNARD", "28 rue des églantines", "28/03/1984", "Auchan")''')
+con.commit()
+con.close()
+
+
 """
 
 Import des différentes classes du projet
 
 """
 ### Organismes
-a = Organisme (codeOrga=1, nomOrga="Auchan", numOrga=1)
-b = Organisme (codeOrga=2, nomOrga="Casino", numOrga=2)
-c = Organisme (codeOrga=3, nomOrga="Leclerc", numOrga=3)
-d = Organisme (codeOrga=4, nomOrga="Carrefour", numOrga=4)
+oa = Organisme (codeOrganisme=1, nomOrganisme="Auchan", numAgrement=1)
+ob = Organisme (codeOrganisme=2, nomOrganisme="Casino", numAgrement=2)
+oc = Organisme (codeOrganisme=3, nomOrganisme="Leclerc", numAgrement=3)
+od = Organisme (codeOrganisme=4, nomOrganisme="Carrefour", numAgrement=4)
 
-print (a)
-print (b)
-print (c)
-print (d)
+print (oa)
+print (ob)
+print (oc)
+print (od)
 
-print("Ca marche du tonnerre")
+oa.save('Travail.db')
 
-### Salles
-aa = Lieu (codeLieu=1, lieuLoc="Bahamas", prix="1300€")
-ab = Lieu (codeLieu=2, lieuLoc="Canaries", prix="1150€")
-ac = Lieu (codeLieu=3, lieuLoc="Antilles", prix="1200€")
-ad = Lieu (codeLieu=4, lieuLoc="Ibiza", prix="600€")
+### Client
+ca = Client (codeClient=1, nomClient="M. BERNARD", adresseClient="28 rue des églantines", dateDeNaissance="28/03/1984", organisme="Auchan")
 
-print (aa)
-print (ab)
-print (ac)
-print (ad)
+print (ca)
+
+### Salle
+sa = Salle (codeSalle=1, nomSalle="Bahamas", prixSalle="1300€")
+sb = Salle (codeSalle=2, nomSalle="Canaries", prixSalle="1150€")
+sc = Salle (codeSalle=3, nomSalle="Antilles", prixSalle="1200€")
+sd = Salle (codeSalle=4, nomSalle="Ibiza", prixSalle="600€")
+
+print (sa)
+print (sb)
+print (sc)
+print (sd)
 
 
-from datetime import date
+### Location
+la = Louer (dateDebut=1639569600, dateFin=1639591200, salle="Bahamas",organisme="Auchan",client="M. BERNARD")
 
-today = date.today()
-print("Date d'aujourd'hui:", today)
+print (la)
