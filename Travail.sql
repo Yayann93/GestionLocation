@@ -36,7 +36,6 @@ dateLocationFin INTEGER NOT NULL,
 codeSalle INTEGER NOT NULL,
 codeOrganisme INTEGER NOT NULL,
 codeClient INTEGER NOT NULL,
-CONSTRAINT pk_louer PRIMARY KEY (codeSalle, codeOrganisme, codeClient),
 CONSTRAINT fk_codeSalle FOREIGN KEY (codeSalle) REFERENCES salle(codeSalle),
 CONSTRAINT fk_codeOrganisme FOREIGN KEY (codeOrganisme) REFERENCES organisme(codeOrganisme),
 CONSTRAINT fk_codeClient FOREIGN KEY (codeClient) REFERENCES client(codeClient));

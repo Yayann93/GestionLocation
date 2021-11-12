@@ -98,3 +98,10 @@ class Client:
 
     def getorganisme (self) -> str:
         return self.__organisme
+
+    def save(self, nomBase : str) -> None:
+        con = sqlite3.connect(nomBase) # Creation de la connexion
+        cur = con.cursor() # Recuperation du curseur de la base
+        cur.execute('''INSERT INTO client(nomClient, adresseClient, dateDeNaissance, codeOrganisme ) VALUES ("'''+self.getnomClient()+'''", "'''+self.getadresseClient()+'''", "'''+self.getdateDeNaissance()+'''")''') # Création de données
+        con.commit() # Sauvegarde des donnees crees
+        con.close() # Fermeture de la connexion
