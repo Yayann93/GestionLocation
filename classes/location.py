@@ -1,4 +1,7 @@
+import sqlite3
+
 class Louer:
+
     def __init__(self, dateDebut, dateFin, salle, organisme, client) -> None:
        
         """
@@ -53,9 +56,16 @@ class Louer:
     def getclient (self) -> str:
         return self.__client
 
+    def save(self, nomBase : str) -> None:
+        con = sqlite3.connect(nomBase) # Creation de la connexion
+        cur = con.cursor() # Recuperation du curseur de la base
+        cur.execute('''INSERT INTO louer(dateLocationDebut, dateLocationFin) VALUES ('''+str(self.getdateDebut())+''', '''+str(self.getdateFin())+''')''') # Création de données
+        con.commit() # Sauvegarde des donnees crees
+        con.close() # Fermeture de la connexion    
 
 
 class Salle:
+
     def __init__(self, codeSalle, nomSalle, prixSalle) -> None:
 
 
@@ -87,3 +97,10 @@ class Salle:
 
     def getprixSalle (self) -> int:
         return self.__prixSalle
+
+    def save(self, nomBase : str) -> None:
+        con = sqlite3.connect(nomBase) # Creation de la connexion
+        cur = con.cursor() # Recuperation du curseur de la base
+        cur.execute('''INSERT INTO salle(nomSalle, prixSalle) VALUES ("'''+self.getnomSalle()+'''", '''+str(self.getprixSalle())+''')''') # Création de données
+        con.commit() # Sauvegarde des donnees crees
+        con.close() # Fermeture de la connexion
