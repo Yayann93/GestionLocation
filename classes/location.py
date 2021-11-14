@@ -18,7 +18,7 @@ class Louer:
         self.setclient(client)
 
     def __str__(self) -> str:
-        return "Date de début de location : "+str(self.getdateDebut())+"; Date de fin de location : "+str(self.getdateFin())+"; Salle louée : "+str(self.getsalle())+"; Organisme locataire : "+str(self.getorganisme())+"; Client : "+str(self.getclient())
+        return "Date de début de location : "+str(self.getdateDebut())+"; Date de fin de location : "+str(self.getdateFin())+";\n\tSalle louée : ["+str(self.getsalle())+"];\n\tOrganisme locataire : ["+str(self.getorganisme())+"];\n\tClient : ["+str(self.getclient())+"]"
 
 
     #Mutateur, Setter
